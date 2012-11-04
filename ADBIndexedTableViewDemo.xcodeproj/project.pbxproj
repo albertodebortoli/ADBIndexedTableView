@@ -18,6 +18,8 @@
 		F0BF7BA61646CFDD00E5F0B5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0BF7BA51646CFDD00E5F0B5 /* Default-568h@2x.png */; };
 		F0BF7BA91646CFDD00E5F0B5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BF7BA71646CFDD00E5F0B5 /* MainStoryboard.storyboard */; };
 		F0BF7BAC1646CFDD00E5F0B5 /* ADBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF7BAB1646CFDD00E5F0B5 /* ADBViewController.m */; };
+		F0BF7BB71646CFF900E5F0B5 /* ADBIndexedTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF7BB41646CFF900E5F0B5 /* ADBIndexedTableView.m */; };
+		F0BF7BB81646CFF900E5F0B5 /* ADBMessageInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BF7BB61646CFF900E5F0B5 /* ADBMessageInterceptor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		F0BF7BA81646CFDD00E5F0B5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		F0BF7BAA1646CFDD00E5F0B5 /* ADBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADBViewController.h; sourceTree = "<group>"; };
 		F0BF7BAB1646CFDD00E5F0B5 /* ADBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADBViewController.m; sourceTree = "<group>"; };
+		F0BF7BB31646CFF900E5F0B5 /* ADBIndexedTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBIndexedTableView.h; sourceTree = "<group>"; };
+		F0BF7BB41646CFF900E5F0B5 /* ADBIndexedTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBIndexedTableView.m; sourceTree = "<group>"; };
+		F0BF7BB51646CFF900E5F0B5 /* ADBMessageInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADBMessageInterceptor.h; sourceTree = "<group>"; };
+		F0BF7BB61646CFF900E5F0B5 /* ADBMessageInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADBMessageInterceptor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		F0BF7B801646CFDD00E5F0B5 = {
 			isa = PBXGroup;
 			children = (
+				F0BF7BB21646CFF900E5F0B5 /* ADBIndexedTableView */,
 				F0BF7B951646CFDD00E5F0B5 /* ADBIndexedTableViewDemo */,
 				F0BF7B8E1646CFDD00E5F0B5 /* Frameworks */,
 				F0BF7B8C1646CFDD00E5F0B5 /* Products */,
@@ -105,6 +112,17 @@
 				F0BF7BA51646CFDD00E5F0B5 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0BF7BB21646CFF900E5F0B5 /* ADBIndexedTableView */ = {
+			isa = PBXGroup;
+			children = (
+				F0BF7BB31646CFF900E5F0B5 /* ADBIndexedTableView.h */,
+				F0BF7BB41646CFF900E5F0B5 /* ADBIndexedTableView.m */,
+				F0BF7BB51646CFF900E5F0B5 /* ADBMessageInterceptor.h */,
+				F0BF7BB61646CFF900E5F0B5 /* ADBMessageInterceptor.m */,
+			);
+			path = ADBIndexedTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +195,8 @@
 				F0BF7B9C1646CFDD00E5F0B5 /* main.m in Sources */,
 				F0BF7BA01646CFDD00E5F0B5 /* ADBAppDelegate.m in Sources */,
 				F0BF7BAC1646CFDD00E5F0B5 /* ADBViewController.m in Sources */,
+				F0BF7BB71646CFF900E5F0B5 /* ADBIndexedTableView.m in Sources */,
+				F0BF7BB81646CFF900E5F0B5 /* ADBMessageInterceptor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ADBIndexedTableView.h"
 
 @interface ADBViewController : UIViewController
+<UITableViewDelegate,
+UITableViewDataSource,
+ADBIndexedTableViewDataSource>
+
+@property (nonatomic, strong) IBOutlet ADBIndexedTableView *tableView;
 
 @end
