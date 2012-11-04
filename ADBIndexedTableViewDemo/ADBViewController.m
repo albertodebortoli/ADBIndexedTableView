@@ -48,7 +48,7 @@
 
 - (UITableViewCell *)indexedTableView:(ADBIndexedTableView *)tableView
                 cellForRowAtIndexPath:(NSIndexPath *)indexPath
-                    objectAtIndexPath:(id)object
+                          usingObject:(id)object
 {
     static NSString *identifier = @"Cell";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];

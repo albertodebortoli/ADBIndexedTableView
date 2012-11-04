@@ -15,7 +15,9 @@ Simple usage:
 
 ``` objective-c
 #pragma mark - ADBIndexedTableViewDataSource
-- (NSString *)objectsFieldForIndexedTableView:(ADBIndexedTableView *)tableView { return objectPropertyAsString; }
+- (NSString *)objectsFieldForIndexedTableView:(ADBIndexedTableView *)tableView {
+	return objectPropertyAsString;
+}
 ```
 
 - dataSource `tableView:cellForRowAtIndexPath` implementation can retrieve object for the given indexPath using `objectAtIndexPath:` method
@@ -31,12 +33,14 @@ Simple usage:
 
 ``` objective-c
 {
-	NSArray *objects = @[...] // new objects retrieved
+	... // retrieve objects
+	NSArray *objects = @[...] // objects retrieved
     [self.tableView reloadDataWithObjects:objects];
 }
 ```
 
-![1](http://www.albertodebortoli.it/GitHub/ADBIndexedTableView/01.png)
+![1](http://www.albertodebortoli.it/GitHub/ADBIndexedTableView/indexed_01.png)
+![2](http://www.albertodebortoli.it/GitHub/ADBIndexedTableView/indexed_02.png)
 
 # License
 

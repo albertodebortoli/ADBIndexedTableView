@@ -12,7 +12,7 @@
 //     (used for sorting and indexing).
 //  3. dataSource 'tableView:cellForRowAtIndexPath' implementation can retrieve object for
 //     the given indexPath using 'objectAtIndexPath:' method.
-//  4. Implementing 'indexedTableView:cellForRowAtIndexPath:objectAtIndexPath:' is required
+//  4. Implementing 'indexedTableView:cellForRowAtIndexPath:usingObject:' is required
 //     and it will be used only if 'tableView:cellForRowAtIndexPath' implementation is not
 //     provided by the dataSource.
 //  5. Reload the table sending unsorted objects via 'reloadDataWithObjects:' method to let
@@ -47,7 +47,7 @@
  */
 - (UITableViewCell *)indexedTableView:(ADBIndexedTableView *)tableView
                 cellForRowAtIndexPath:(NSIndexPath *)indexPath
-                    objectAtIndexPath:(id)object;
+                          usingObject:(id)object;
 @end
 
 @interface ADBIndexedTableView : UITableView {

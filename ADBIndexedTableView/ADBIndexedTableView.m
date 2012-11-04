@@ -126,13 +126,13 @@ sectionForSectionIndexTitle:(NSString *)title
     
     UITableViewCell *cell = nil;
     
-    // since 'indexedTableView:cellForRowAtIndexPath:objectAtIndexPath:' is marked ad @optional
+    // since 'indexedTableView:cellForRowAtIndexPath:usingObject:' is marked ad @optional
     // we should check if indexDataSource responds to it, but if we get here dataSource does not implement
     // 'tableView:cellForRowAtIndexPath:' and so indexDataSource must implement
-    // 'indexedTableView:cellForRowAtIndexPath:objectAtIndexPath:' (required in this scenario)
+    // 'indexedTableView:cellForRowAtIndexPath:usingObject:' (required in this scenario)
     cell = [_indexDataSource indexedTableView:self
                         cellForRowAtIndexPath:indexPath
-                            objectAtIndexPath:objectAtIndexPath];
+                                  usingObject:objectAtIndexPath];
     
     return cell;
 }
