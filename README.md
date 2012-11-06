@@ -21,12 +21,12 @@ Simple usage:
 ```
 
 - dataSource `tableView:cellForRowAtIndexPath` implementation can retrieve object for the given indexPath using `objectAtIndexPath:` method
-- implementing `indexedTableView:cellForRowAtIndexPath:objectAtIndexPath:` is required and it will be used only if `tableView:cellForRowAtIndexPath` implementation is not provided by the dataSource.
+- implementing `indexedTableView:cellForRowAtIndexPath:usingObject:` is required and it will be used only if `tableView:cellForRowAtIndexPath` implementation is not provided by the dataSource.
 
 ``` objective-c
 - (UITableViewCell *)indexedTableView:(ADBIndexedTableView *)tableView
                 cellForRowAtIndexPath:(NSIndexPath *)indexPath
-                    objectAtIndexPath:(id)object { ... }
+                    	  usingObject:(id)object { ... }
 ```
 
 - reload the table sending unsorted objects via `reloadDataWithObjects:` method to let indexedTableView create the data structure. Use `reloadData` for subsequent reloadings.
