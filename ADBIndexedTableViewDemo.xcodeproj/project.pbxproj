@@ -278,6 +278,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ADBIndexedTableViewDemo/ADBIndexedTableViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "ADBIndexedTableViewDemo/ADBIndexedTableViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -289,6 +290,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ADBIndexedTableViewDemo/ADBIndexedTableViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "ADBIndexedTableViewDemo/ADBIndexedTableViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -313,6 +315,7 @@
 				F0BF7BB11646CFDD00E5F0B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
