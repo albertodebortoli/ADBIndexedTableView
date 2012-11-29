@@ -6,6 +6,8 @@ ADBIndexedTableView uses Objective-C runtime, introspection and message forwardi
 
 Try out the included demo project.
 
+If you'd like to include this component as a pod using [CocoaPods](http://cocoapods.org/), just add the following line to your Podfile: `pod "ADBIndexedTableView"`
+
 Simple usage:
 - copy ADBIndexedTableView and ADBMessageInterceptor classes into your project
 - import `ADBIndexedTableView.h` in your class
