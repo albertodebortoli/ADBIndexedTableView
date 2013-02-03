@@ -22,7 +22,7 @@ Simple usage:
 }
 ```
 
-- dataSource `tableView:cellForRowAtIndexPath` implementation can retrieve object for the given indexPath using `objectAtIndexPath:` method
+- dataSource `tableView:cellForRowAtIndexPath:` implementation can retrieve object for the given indexPath using `objectAtIndexPath:` method
 - implementing `indexedTableView:cellForRowAtIndexPath:usingObject:` is required and it will be used only if `tableView:cellForRowAtIndexPath` implementation is not provided by the dataSource.
 
 ``` objective-c
