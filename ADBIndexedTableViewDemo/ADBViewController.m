@@ -64,18 +64,18 @@
 
 // otherwise we can implement original tableView:cellForRowAtIndexPath: method
 
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString *identifier = @"Cell";
-//    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
-//
-//    if (cell == nil)
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-//
-//    NSDictionary *obj = [self.tableView objectAtIndexPath:indexPath];
-//    cell.textLabel.text = [NSString stringWithFormat:@"%@ (via dataSource)", [obj valueForKey:@"name"]];
-//
-//    return cell;
-//}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"Cell";
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
+
+    if (cell == nil)
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+
+    NSDictionary *obj = [self.tableView objectAtIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ (via dataSource)", [obj valueForKey:@"name"]];
+
+    return cell;
+}
 
 @end

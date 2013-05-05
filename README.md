@@ -2,7 +2,7 @@ ADBIndexedTableView
 ===========================
 
 Indexed UITableView using first letter objects property.
-ADBIndexedTableView uses Objective-C runtime, introspection and message forwarding.
+ADBIndexedTableView uses introspection and message forwarding.
 
 Try out the included demo project.
 
@@ -23,7 +23,7 @@ Simple usage:
 ```
 
 - dataSource `tableView:cellForRowAtIndexPath:` implementation can retrieve object for the given indexPath using `objectAtIndexPath:` method
-- implementing `indexedTableView:cellForRowAtIndexPath:usingObject:` is required and it will be used only if `tableView:cellForRowAtIndexPath` implementation is not provided by the dataSource.
+- implementation of `indexedTableView:cellForRowAtIndexPath:usingObject:` is required and it will be used only if `tableView:cellForRowAtIndexPath:` implementation is not provided by the dataSource.
 
 ``` objective-c
 - (UITableViewCell *)indexedTableView:(ADBIndexedTableView *)tableView
@@ -31,7 +31,7 @@ Simple usage:
                     	  usingObject:(id)object { ... }
 ```
 
-- reload the table sending unsorted objects via `reloadDataWithObjects:` method to let indexedTableView create the data structure. Use `reloadData` for subsequent reloadings.
+- reload the table sending unsorted objects via `reloadDataWithObjects:` method to let indexedTableView create the data structure. Use `reloadData` for subsequent reloads.
 
 ``` objective-c
 {
@@ -41,14 +41,14 @@ Simple usage:
 }
 ```
 
-![1](http://www.albertodebortoli.it/GitHub/ADBIndexedTableView/indexed_01.png)
-![2](http://www.albertodebortoli.it/GitHub/ADBIndexedTableView/indexed_02.png)
+![1](https://s3.amazonaws.com/albertodebortoli.github.com/images/adbindexedtableview/indexed_01.png)
+![2](https://s3.amazonaws.com/albertodebortoli.github.com/images/adbindexedtableview/indexed_02.png)
 
 # License
 
 Licensed under the New BSD License.
 
-Copyright (c) 2012, Alberto De Bortoli
+Copyright (c) 2013, Alberto De Bortoli
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -75,4 +75,4 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## Resources
 
-Info can be found on [my website](http://www.albertodebortoli.it), [and on Twitter](http://twitter.com/albertodebo).
+Info can be found on [my website](http://www.albertodebortoli.com), [and on Twitter](http://twitter.com/albertodebo).

@@ -1,12 +1,19 @@
 //
 //  ADBIndexedTableView.m
-//  PassDesk
+//  ADBIndexedTableView
+//  v1.1.0
 //
 //  Created by Alberto De Bortoli on 11/4/12.
 //  Copyright (c) 2012 Alberto De Bortoli. All rights reserved.
 //
 
 #import "ADBIndexedTableView.h"
+
+@interface ADBIndexedTableView ()
+
+@property (nonatomic, strong) ADBMessageInterceptor *dataSourceInterceptor;
+
+@end
 
 @implementation ADBIndexedTableView
 
@@ -32,7 +39,7 @@
 
 - (void)reloadDataWithObjects:(NSArray *)objects
 {
-    NSString *field = [_indexDataSource objectsFieldForIndexedTableView:self];
+    NSString *field = [self.indexDataSource objectsFieldForIndexedTableView:self];
     
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:field ascending:YES];
     objects = [objects sortedArrayUsingDescriptors:@[sortDescriptor]];
@@ -48,15 +55,15 @@
         }
     }
     
-    _objectsInitials = initials;
+    self.objectsInitials = initials;
     
-    _indexedObjects = [NSMutableDictionary dictionary];
+    self.indexedObjects = [NSMutableDictionary dictionary];
     
-    // create dictionary with objects grouped for initial
-    for (NSString *initial in _objectsInitials) {
+    // create dictionary with objects grouped by initial
+    for (NSString *initial in self.objectsInitials) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.%@ beginswith[cd] %@", field, initial];
         NSArray *filteredForInitial = [objects filteredArrayUsingPredicate:predicate];
-        [_indexedObjects setObject:filteredForInitial forKey:initial];
+        [self.indexedObjects setObject:filteredForInitial forKey:initial];
     }
     
     [self reloadData];
@@ -79,14 +86,14 @@
 
 - (id)objectsWithInitials:(NSString *)initial
 {
-    NSArray *retVal = _indexedObjects[[initial uppercaseString]];
+    NSArray *retVal = self.indexedObjects[[initial uppercaseString]];
     return retVal;
 }
 
 - (id)objectsInSection:(NSUInteger)section
 {
-    NSString *initial = [_objectsInitials objectAtIndex:section];
-    NSArray *retVal = _indexedObjects[initial];
+    NSString *initial = [self.objectsInitials objectAtIndex:section];
+    NSArray *retVal = self.indexedObjects[initial];
     return retVal;
 }
 
@@ -94,30 +101,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [_objectsInitials count];
+    return [self.objectsInitials count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSString *initial = _objectsInitials[section];
-    return [_indexedObjects[initial] count];
+    NSString *initial = self.objectsInitials[section];
+    return [self.indexedObjects[initial] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return _objectsInitials[section];
+    return self.objectsInitials[section];
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
-    return _objectsInitials;
+    return self.objectsInitials;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
 sectionForSectionIndexTitle:(NSString *)title
                atIndex:(NSInteger)index
 {
-    return [_objectsInitials indexOfObject:title];
+    return [self.objectsInitials indexOfObject:title];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -126,13 +133,13 @@ sectionForSectionIndexTitle:(NSString *)title
     
     UITableViewCell *cell = nil;
     
-    // since 'indexedTableView:cellForRowAtIndexPath:usingObject:' is marked as @optional
+    // since indexedTableView:cellForRowAtIndexPath:usingObject: is marked as @optional
     // we should check if indexDataSource responds to it, but if we get here, dataSource does not implement
-    // 'tableView:cellForRowAtIndexPath:', therefore indexDataSource must implement
-    // 'indexedTableView:cellForRowAtIndexPath:usingObject:' (required in this scenario)
-    cell = [_indexDataSource indexedTableView:self
-                        cellForRowAtIndexPath:indexPath
-                                  usingObject:objectAtIndexPath];
+    // tableView:cellForRowAtIndexPath:, therefore indexDataSource must implement
+    // indexedTableView:cellForRowAtIndexPath:usingObject: (required in this scenario)
+    cell = [self.indexDataSource indexedTableView:self
+                            cellForRowAtIndexPath:indexPath
+                                      usingObject:objectAtIndexPath];
     
     return cell;
 }

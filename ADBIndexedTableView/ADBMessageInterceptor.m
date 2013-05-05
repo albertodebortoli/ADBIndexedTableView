@@ -1,6 +1,7 @@
 //
 //  ADBMessageInterceptor.m
-//  PassDesk
+//  ADBIndexedTableView
+//  v1.1.0
 //
 //  Created by Alberto De Bortoli on 11/4/12.
 //  Copyright (c) 2012 Alberto De Bortoli. All rights reserved.
