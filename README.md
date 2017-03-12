@@ -41,8 +41,8 @@ Simple usage:
 }
 ```
 
-![1](https://s3.amazonaws.com/albertodebortoli.github.com/images/adbindexedtableview/indexed_01.png)
-![2](https://s3.amazonaws.com/albertodebortoli.github.com/images/adbindexedtableview/indexed_02.png)
+![1](./images/indexed_01.png)
+![2](./images/indexed_02.png)
 
 # License
 
